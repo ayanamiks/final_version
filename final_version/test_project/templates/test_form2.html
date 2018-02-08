@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h2>Test form2</h2>
+
+<p><a href="{% url 'index' %}">Home</a></p>
+
+<div class="container">
+    <form method="post">
+        <input id="addd" value="+" type="button">
+        {% csrf_token %}
+        <div id="forms_wrapper2">
+            <label for="login-field">name</label>
+            <input type="text" name="name" id="login-field">
+        </div>
+        <input type="submit" value="Save">
+    </form>
+    <template id="similar-field">
+        <br>
+        <label for="login-field">name</label>
+        <input type="text" name="name" id="login-field">
+    </template>
+    <p><a href="{% url 'results' %}">View results</a></p>
+</div>
+    {% load staticfiles %}
+    <script src="{% static 'js/test_form2.js' %}"></script>
+{% endblock %}

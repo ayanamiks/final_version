@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <h2>{{ title }}</h2>
+    <p><a href="{% url 'index' %}">Home</a></p>
+
+    <div>
+        <p>Results:</p>
+        {{ json_data }}
+    </div>
+
+{% endblock %}
